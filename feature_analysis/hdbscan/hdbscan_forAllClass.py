@@ -6,7 +6,7 @@ from sklearn.preprocessing import StandardScaler
 import pickle
 
 # 데이터 경로 설정
-dataset_dir = '/scratch4/starlink/baseline/feature/time_direction/'
+dataset_dir = ' '    # TODO : set the path for dataset 
 
 # 데이터 로드
 with open(dataset_dir + 'TikTok_FF_X_direction.pkl', 'rb') as handle:
@@ -48,8 +48,7 @@ def makeHDBSCAN(target_classes):
     plt.ylabel("PCA Component 2")
 
     # 그래프 저장
-    #plt.savefig(f"/home/jiwoo0914/starlink/traffic_analysis/HDBSCAN/6._perAllClasses/hdbscan_classes_{'_'.join(map(str, target_classes))}.png", dpi=300)
-    plt.savefig(f"/home/jiwoo0914/starlink/traffic_analysis/HDBSCAN/6._perAllClasses/hdbscan_2.png", dpi=300)
+    plt.savefig(f"  /hdbscan_classes_{'_'.join(map(str, target_classes))}.png", dpi=300)
     plt.close()
 
     print(f'Classes {target_classes} 완료')
