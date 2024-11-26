@@ -1,0 +1,9 @@
+input_path= /scratch4/kanghosung/starlink_wefde/features/firefox_fiber
+init
+170
+Use pkl file /scratch4/kanghosung/starlink_wefde/features/firefox_fiber/features.pkl
+1
+2
+3
+<data_utils.WebsiteData object at 0x7f924825de80>
+All Done: 32.780113808314006 min
