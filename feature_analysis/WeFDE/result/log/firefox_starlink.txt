@@ -1,0 +1,10 @@
+input_path= /scratch4/kanghosung/starlink_wefde/features/firefox_starlink
+init
+170
+181
+/scratch4/kanghosung/starlink_wefde/features/firefox_starlink
+1
+2
+3
+<data_utils.WebsiteData object at 0x7fee55f00e80>
+All Done: 30.769520509243012 min
