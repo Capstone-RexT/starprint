@@ -49,7 +49,7 @@ Starprint는 **위성인터넷 해킹으로 인한 프라이버시 유출 방지
 3. **설치 및 실행**:  
    ```bash
    # 프로젝트 클론
-   git clone [https://github.com/Capstone-RexT/starprint.git](https://github.com/Capstone-RexT/starprint)
+   git clone https://github.com/Capstone-RexT/starprint
    
    # 환경 세팅
    cd starprint
