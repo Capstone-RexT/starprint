@@ -1,9 +1,9 @@
 # **Starprint: 위성인터넷 해킹을 통한 프라이버시 유출 방지를 위한 Fingerprinting 기법을 활용한 Starlink 네트워크 취약점 분석**  
-**2024 Ewha Womans University Capstone Design Project - Team16 RexT**
+**2024~2025 Ewha Womans University Capstone Design Project - Team16 RexT**
 
 
 ## **소개**  
-Starprint는 **위성인터넷 해킹으로 인한 프라이버시 유출 방지**를 목표로, **Fingerprinting 기법**을 활용하여 **Starlink 네트워크의 취약점**을 분석하는 프로젝트입니다.  
+Starprint는 **위성인터넷 해킹으로 인한 프라이버시 유출 방지**를 목표로, **Website Fingerprinting 기법**을 활용하여 **Starlink 네트워크의 취약점**을 분석하는 프로젝트입니다.  
 본 연구는 위성 네트워크의 보안 강화를 위한 학문적, 실질적 기여를 목표로 하고 있습니다.  
 
 ---
