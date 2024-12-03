@@ -80,6 +80,11 @@ Starprint는 **위성인터넷 해킹으로 인한 프라이버시 유출 방지
    ```
 ---
 
+## 기술 시연 영상
+[![Watch the video](https://img.youtube.com/vi/TnjwFFnJn-4/maxresdefault.jpg)](https://www.youtube.com/watch?v=TnjwFFnJn-4)
+
+---
+
 ## **문의**  
 프로젝트에 대한 문의는 이메일로 연락해 주세요.  
 - **이메일**: 2171003@ewha.ac.kr  
