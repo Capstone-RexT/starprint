@@ -32,20 +32,29 @@ Starprint는 **위성인터넷 해킹으로 인한 프라이버시 유출 방지
 
 ---
 
-## **구성원 및 역할**  
-- **팀원**:  
-  - **곽현정**: 프로젝트 총괄, 모델 아키텍처 탐색 및 Llama 모델 구현
-  - **강호성**: Fingerprinting 모델 설계 및 구현  
-  - **홍지우**: 네트워크 취약점 분석 및 traffic analysis, Fingerprinting 모델 설계 및 구현
----
-
-## **성과 및 기대 효과**  
-- 위성 네트워크의 취약점을 구체적으로 규명하여 관련 보안 연구에 기여  
-- 데이터 기반 분석 결과를 바탕으로 Starlink의 보안 강화 방향 제시  
-
----
-
 ## **시작하기 (Getting Started)**  
+### **프로젝트 폴더 구성 및 역할**  
+1. **`feature_analysis`**
+   - **역할**: 가지고 있는 네트워크 트래픽의 분포를 확인하고 분석합니다.
+    
+3. **`feature_extractor`**  
+   - **역할**: 네트워크 트래픽에서 주요 특징(feature)을 추출하는 스크립트를 포함합니다.  
+   - **주요 파일**:
+     - `functions.py`: 각 메타데이터마다 feature를 추출하는 함수들을 모아놓은 모듈입니다.
+     - `pkl_extractor.py`: 수집된 네트워크 트래픽 데이터를 전처리하고, pickle 형식으로 저장합니다. 
+
+4. **`embedding_extractor`**  
+   - **역할**: 앞에서 추출된 트래픽의 feature를 입력으로 받아, 모델 학습에 사용될 임베딩 벡터를 생성합니다.  
+   - **주요 파일**:  
+     - `llama_extractor.py`: Llama 모델을 사용하여 트래픽 데이터를 임베딩 공간으로 매핑합니다.  
+
+5. **`models/star_laserbeak`**  
+   - **역할**: 학습된 모델을 사용하여 위성 네트워크 트래픽의 분류를 수행합니다.  
+   - **주요 파일**:  
+     - `laserbeak_1d_main.py`: 1D CNN 기반 분류 모델을 실행하여 네트워크 트래픽 분석 결과를 출력합니다.  
+
+---
+### **설치 및 실행**
 1. **필수 요구사항**:
    - python 3.7 이상
    - cuda 11.4
@@ -82,6 +91,19 @@ Starprint는 **위성인터넷 해킹으로 인한 프라이버시 유출 방지
 
 ## 기술 시연 영상
 [![Watch the video](https://img.youtube.com/vi/TnjwFFnJn-4/maxresdefault.jpg)](https://www.youtube.com/watch?v=TnjwFFnJn-4)
+
+---
+
+## **구성원 및 역할**  
+- **팀원**:  
+  - **곽현정**: 프로젝트 총괄, 모델 아키텍처 탐색 및 Llama 모델 구현
+  - **강호성**: Fingerprinting 모델 설계 및 구현  
+  - **홍지우**: 네트워크 취약점 분석 및 traffic analysis, Fingerprinting 모델 설계 및 구현
+---
+
+## **성과 및 기대 효과**  
+- 위성 네트워크의 취약점을 구체적으로 규명하여 관련 보안 연구에 기여  
+- 데이터 기반 분석 결과를 바탕으로 Starlink의 보안 강화 방향 제시  
 
 ---
 
