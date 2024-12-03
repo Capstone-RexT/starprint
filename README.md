@@ -42,16 +42,22 @@ Starprint는 **위성인터넷 해킹으로 인한 프라이버시 유출 방지
    - **주요 파일**:
      - `functions.py`: 각 메타데이터마다 feature를 추출하는 함수들을 모아놓은 모듈입니다.
      - `pkl_extractor.py`: 수집된 네트워크 트래픽 데이터를 전처리하고, pickle 형식으로 저장합니다. 
+     - `npz_extractor.py`: 수집된 네트워크 트래픽 데이터를 전처리하고, npz 형식으로 저장합니다. 
 
 4. **`embedding_extractor`**  
    - **역할**: 앞에서 추출된 트래픽의 feature를 입력으로 받아, 모델 학습에 사용될 임베딩 벡터를 생성합니다.  
    - **주요 파일**:  
-     - `llama_extractor.py`: Llama 모델을 사용하여 트래픽 데이터를 임베딩 공간으로 매핑합니다.  
+     - `llama_extractor.py`: Llama 모델을 사용하여 트래픽 데이터를 임베딩 공간으로 매핑합니다.
+     - `models.py`: llama 모델 클래스가 정의되어 있는 모듈입니다.
+     - `data_loader.py`: 추출된 feature 파일을 로드하여 제공합니다.
+     - `splitter.py`: 추출된 feature 파일을 train, valid, test 데이터셋으로 분할합니다.
 
-5. **`models/star_laserbeak`**  
+5. **`models`**  
    - **역할**: 학습된 모델을 사용하여 위성 네트워크 트래픽의 분류를 수행합니다.  
-   - **주요 파일**:  
-     - `laserbeak_1d_main.py`: 1D CNN 기반 분류 모델을 실행하여 네트워크 트래픽 분석 결과를 출력합니다.  
+   - **주요 파일**:
+     - `star_df/quantile_model.py`: 1D CNN 기반 모델에 Quantile Normalization을 더해 성능을 강화한 모델입니다.
+     - `star_df/softvoting_model.py`: 1D CNN 기반 모델을 앙상블 기법을 이용해 안정적인 정확도를 내는 모델입니다.
+     - `star_laserbeak/laserbeak_1d_main.py`: 단일 feature를 받아 Transformer 기반 분류 모델을 실행하여 네트워크 트래픽 분석 결과를 출력합니다.  
 
 ---
 ### **설치 및 실행**
