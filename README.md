@@ -48,9 +48,9 @@ Starprint는 **위성인터넷 해킹으로 인한 프라이버시 유출 방지
    - **역할**: 앞에서 추출된 트래픽의 feature를 입력으로 받아 모델 학습에 사용될 임베딩 벡터를 생성합니다.  
    - **주요 파일**:  
      - `llama_extractor.py`: Llama 모델을 사용하여 트래픽 데이터를 임베딩 공간으로 매핑합니다.
-     - `models.py`: llama 모델 클래스가 정의되어 있는 모듈입니다.
+     - `llama_models.py`: llama 모델 클래스가 정의되어 있는 모듈입니다.
      - `data_loader.py`: 추출된 feature 파일을 로드하여 제공합니다.
-     - `splitter.py`: 추출된 feature 파일을 train, valid, test 데이터셋으로 분할합니다.
+     - `data_splitter.py`: 추출된 feature 파일을 train, valid, test 데이터셋으로 분할합니다.
 
 5. **`models`**  
    - **역할**: 모델을 학습시키고 이를 기반으로 위성 네트워크 트래픽의 분류를 수행합니다.  
