@@ -11,9 +11,9 @@ from data_loader import load_dataset_pkl, load_dataset_npz
 
 NB_CLASSES = 75
 
-def load_dataset_split_pkl():
+def load_dataset_split_pkl(feature):
     print("Loading and preparing data for training, and evaluating the model")
-    X_train, y_train, X_valid, y_valid, X_test, y_test = load_dataset_pkl()
+    X_train, y_train, X_valid, y_valid, X_test, y_test = load_dataset_pkl(feature)
     
     ###########K.set_image_dim_ordering("tf") # tf is tensorflow
     K.set_image_data_format('channels_first')
@@ -42,9 +42,9 @@ def load_dataset_split_pkl():
 
     return X_train, y_train, X_valid, y_valid, X_test, y_test
 
-def load_dataset_split_npz():
+def load_dataset_split_npz(feature):
     print("Loading and preparing data for training, and evaluating the model")
-    X_train, y_train, X_valid, y_valid, X_test, y_test = load_dataset_npz()
+    X_train, y_train, X_valid, y_valid, X_test, y_test = load_dataset_npz(feature)
 
     ###########K.set_image_dim_ordering("tf") # tf is tensorflow
     K.set_image_data_format('channels_first')

@@ -18,8 +18,7 @@ import gc
 import logging
 from datetime import datetime
 import sys
-from utility import LoadDataNoDefCW
-from Model_NoDef import DFNet
+from softvoting_model import DFNet
 
 random.seed(0)
 

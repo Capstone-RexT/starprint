@@ -47,14 +47,14 @@ def load_dataset_npz(feature):
         print(X_train.shape)
         print(X_train[0])
 
-    with open(f'{dataset_dir}ff_sl_{feature}_valid_12inst.npz', 'rb') as handle:
+    with open(f'{dataset_dir}/ff_sl_{feature}_valid_12inst.npz', 'rb') as handle:
         valid = np.load(handle)
         X_valid = np.array(valid['data'], dtype=object)
         y_valid = np.array(valid['labels'], dtype=object)
         print(X_valid.shape)
         print(X_valid[0])
 
-    with open(f'{dataset_dir}ff_sl_{feature}_testing_12inst.npz', 'rb') as handle:
+    with open(f'{dataset_dir}/ff_sl_{feature}_testing_12inst.npz', 'rb') as handle:
         test = np.load(handle)
         X_test = np.array(test['data'], dtype=object)
         y_test = np.array(test['labels'], dtype=object)

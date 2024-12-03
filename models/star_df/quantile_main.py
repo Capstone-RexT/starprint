@@ -19,8 +19,7 @@ import gc
 import logging
 from datetime import datetime
 import sys
-from utility import LoadDataNoDefCW
-from Model_NoDef import DFNet
+from quantile_model import DFNet
 
 
 PARSER = ArgumentParser()
