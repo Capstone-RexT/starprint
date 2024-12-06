@@ -56,11 +56,6 @@ def load_dataset_split_npz(feature):
     y_train = y_train.astype('float32')
     y_valid = y_valid.astype('float32')
     y_test = y_test.astype('float32')
-
-    # we need a [Length x 1] x n shape as input to the DF CNN (Tensorflow)
-    X_train = X_train[:, :,np.newaxis]
-    X_valid = X_valid[:, :,np.newaxis]
-    X_test = X_test[:, :,np.newaxis]
     
     print(X_train.shape[0], 'train samples')
     print(X_valid.shape[0], 'validation samples')
@@ -71,4 +66,4 @@ def load_dataset_split_npz(feature):
     y_valid = to_categorical(y_valid, NB_CLASSES)
     y_test = to_categorical(y_test, NB_CLASSES)
 
-    return X_train, X_valid, X_test, y_train, y_valid, y_test
+    return X_train, y_train, X_valid, y_valid, X_test, y_test
