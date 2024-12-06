@@ -4,7 +4,7 @@ import torch.nn as nn
 from pathlib import Path
 import tiktoken
 from tiktoken.load import load_tiktoken_bpe
-from functions import precompute_rope_params, compute_rope
+from llama_functions import precompute_rope_params, compute_rope
 
 class FeedForward(nn.Module):
     def __init__(self, cfg):

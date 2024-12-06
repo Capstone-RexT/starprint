@@ -14,12 +14,12 @@ import matplotlib.pyplot as plt
 from sklearn.preprocessing import QuantileTransformer
 import gc
 from tqdm import tqdm
-from models import Llama3Model
-from functions import rescale_theta, model_memory_size
-from splitter import load_dataset_split_pkl, load_dataset_split_npz
+from llama_models import Llama3Model
+from llama_functions import rescale_theta, model_memory_size
+from data_splitter import load_dataset_split_pkl, load_dataset_split_npz
 
 torch.manual_seed(123)
-login("YOUR KEY")
+# login("YOUR KEY")
 
 # Set to use only one GPU
 os.environ["CUDA_VISIBLE_DEVICES"] = "6"
@@ -67,6 +67,7 @@ LLAMA32_CONFIG["rope_base"] = rescale_theta(LLAMA32_CONFIG["rope_base"], old_con
 
 print(f"Updated RoPE theta: {LLAMA32_CONFIG['rope_base']}")
 
+# %%
 # Initialize model
 llama = Llama3Model(LLAMA32_CONFIG)
 
@@ -87,15 +88,19 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print(f"Using device: {device}")
 llama.to(device)
 
+# %%
 # Load datasets
 X_train, y_train, X_valid, y_valid, X_test, y_test = load_dataset_split_npz(feature[0:-4])
+# %%
+# Quantile Transformation
 if quantile:
     qt = QuantileTransformer(output_distribution='normal', random_state=0)
     X_train = qt.fit_transform(X_train)
     X_valid = qt.fit_transform(X_valid)
     X_test = qt.fit_transform(X_test)
-
+# %%
 vocab_size = llama.module.tok_emb.num_embeddings if torch.cuda.device_count() > 1 else llama.tok_emb.num_embeddings
+# %%
 # Continue with embedding and training steps as in original code
 # Embedding extraction with progress bar
 for ((data, target), desc) in zip(
@@ -118,6 +123,7 @@ for ((data, target), desc) in zip(
         # print(input_ids)
         # print(f"Input IDs shape: {input_ids.shape}, Max value: {input_ids.max()}, Min value: {input_ids.min()}")
         input_ids -= input_ids.min()
+
         # Move model outputs to CPU if necessary
         embedding_vector = llama(input_ids, output_embeddings=True).to("cpu")
 
