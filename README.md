@@ -95,11 +95,6 @@ Starprint는 **위성인터넷 해킹으로 인한 프라이버시 유출 방지
    ```
 ---
 
-## 기술 시연 영상
-[![Watch the video](https://img.youtube.com/vi/TnjwFFnJn-4/maxresdefault.jpg)](https://www.youtube.com/watch?v=TnjwFFnJn-4)
-
----
-
 ## **구성원 및 역할**  
 - **팀원**:  
   - **곽현정**: 프로젝트 총괄, 모델 아키텍처 탐색 및 Llama 모델 구현
